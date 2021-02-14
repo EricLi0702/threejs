@@ -46,7 +46,7 @@ export const sceneData = [
 			{id:'', object:'K82', pos:{x:-0.9, y:-0.5, z:9.8}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 			{id:'', object:'K83', pos:{x:-1.6, y:-0.5, z:9.8}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 		],
-		camPos:{x:-3, z:0}
+		camPos:{x:0, z:1}
 	}, {
 		name: 'K5',
 		backImg: ImgK5,
