@@ -40,8 +40,8 @@ export default class HomeComponent extends React.Component {
 	}
 
 	openWindow=(url)=> {
-		const modalWidth = this.cWidth * 0.9;
-		const modalHeight = this.cHeight * 0.9;
+		const modalWidth = this.cWidth * 0.8;
+		const modalHeight = this.cHeight * 0.8;
 		const left = this.cWidth * 0.05;
 		const top = this.cHeight * 0.05 + 50;
 		var myWindow = window.open(url, '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + modalWidth + ', height=' + modalHeight + ', top=' + top + ', left=' + left);
