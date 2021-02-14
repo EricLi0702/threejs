@@ -1,0 +1,129 @@
+body{
+	margin: 0;
+	overflow: hidden;
+}
+.home{
+	background-color: #D3D3D3;
+}
+#container{
+	width: 100vw;
+	height: 100vh;
+}
+#container canvas{
+	outline: none;
+}
+
+.setting{
+	position: absolute;
+	top: 50px;
+	right: 40px;
+}
+
+.setting .setting-item{
+	margin: 10px;
+	padding: 10px;
+	width: 100px;
+	text-align: center;
+	border-bottom: 1px solid grey;
+	background-color: white;
+	cursor: pointer;
+}
+.setting .setting-item.active{
+	border-color: red;
+}
+
+.modal-wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#detailModal {
+	background-color: white;
+	width: 80vw;
+	height: 80vh;
+	padding:15px;
+	display: flex;
+
+}
+#detailModal img{
+	max-width: 100%;
+}
+#detailModal iframe{
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+}
+
+#loading{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: black;
+}
+
+#loading .item{
+	width: 30px;
+	height: 30px;
+	background-color: #808080;
+	position: absolute;
+}
+#loading .item.left{
+	left: calc(50vw - 40px);
+}
+#loading .item.right{
+	left: calc(50vw + 10px);
+}
+#loading .item.top{
+	top: calc(50vh - 40px);
+}
+#loading .item.bottom{
+	top: calc(50vh + 10px);
+}
+
+#loading .item.left.top{
+	animation: loading0 1.5s infinite;
+}
+#loading .item.right.top{
+	animation: loading1 1.5s infinite;
+}
+#loading .item.right.bottom{
+	animation: loading2 1.5s infinite;
+}
+#loading .item.left.bottom{
+	animation: loading3 1.5s infinite;
+}
+
+@keyframes loading0 {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes loading1 {
+    0% { opacity: 0; }
+    25% { opacity: 0; }
+    50% { opacity: 1; }
+    75% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes loading2 {
+    0% { opacity: 0; }
+    25% { opacity: 0; }
+    50% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes loading3 {
+    0% { opacity: 1; }
+    25% { opacity: 0; }
+    50% { opacity: 0; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
+}
