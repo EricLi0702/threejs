@@ -1,10 +1,10 @@
 
-import ImgK4 from '../assets/images/K4.jpg';
-import ImgK5 from '../assets/images/K5.jpg';
-import ImgK6 from '../assets/images/K6.jpg';
-import ImgK7 from '../assets/images/K7.jpg';
-import ImgK8 from '../assets/images/K8.jpg';
-import ImgK9 from '../assets/images/K9.jpg';
+import ImgK4 from '../assets/images/big_K4.jpg';
+import ImgK5 from '../assets/images/big_K5.jpg';
+import ImgK6 from '../assets/images/big_K6.jpg';
+import ImgK7 from '../assets/images/big_K7.jpg';
+import ImgK8 from '../assets/images/big_K8.jpg';
+import ImgK9 from '../assets/images/big_K9.jpg';
 
 // import imgK6Indiv from '../assets/images/portfolio-projekte-individuelle-bauweise.jpg';
 // import imgK6Misch from '../assets/images/portfolio-projekte-mischbauweise.jpg';
@@ -46,7 +46,7 @@ export const sceneData = [
 			{id:'', object:'K82', pos:{x:-0.9, y:-0.5, z:9.8}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 			{id:'', object:'K83', pos:{x:-1.6, y:-0.5, z:9.8}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 		],
-		camPos:{x:0, z:1}
+		camPos:{x:-3, z:0}
 	}, {
 		name: 'K5',
 		backImg: ImgK5,
@@ -58,7 +58,7 @@ export const sceneData = [
 		points: [
 			{id:'', object:'K50', pos:{x:8.5, y:0.9, z:-2.3}, scale:{x:4, y:3, z:1}, rot:{x:0, y:1.57, z:0}, url:videoK7Url},
 		],
-		camPos:{x:-2, z:0}
+		camPos:{x:-3, z:0}
 	}, {
 		name: 'K6',
 		backImg: ImgK6,
@@ -82,7 +82,7 @@ export const sceneData = [
 			{id:'', object:'K82', pos:{x:-3, y:-0.9, z:9.3}, scale:{x:1, y:0.7, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 			{id:'', object:'K83', pos:{x:-4.1, y:-0.9, z:8.8}, scale:{x:1, y:0.7, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 		],
-		camPos:{x:-2, z:0}
+		camPos:{x:-3, z:0}
 	}, {
 		name: 'K7',
 		backImg: ImgK7,
@@ -102,7 +102,7 @@ export const sceneData = [
 			{id:'', object:'K82', pos:{x:-3.1, y:-0.4, z:9.2}, scale:{x:0.5, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 			{id:'', object:'K83', pos:{x:-3.8, y:-0.4, z:9.2}, scale:{x:0.5, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 		],
-		camPos:{x:-2, z:0}
+		camPos:{x:-3, z:0}
 	}, {
 		name: 'K8',
 		backImg: ImgK8,
@@ -127,7 +127,7 @@ export const sceneData = [
 			{id:'', object:'K82', pos:{x:9.4, y:-1.3, z:2.2}, scale:{x:1.4, y:0.8, z:1}, rot:{x:0, y:1.57, z:0}, url:testPdfUrl},
 			{id:'', object:'K83', pos:{x:8.8, y:-1.2, z:4}, scale:{x:1.2, y:0.8, z:1}, rot:{x:0, y:1.4, z:0}, url:testPdfUrl},
 		],
-		camPos:{x:-2, z:0}
+		camPos:{x:-3, z:0}
 	}, {
 		name: 'K9',
 		backImg: ImgK9,
@@ -149,6 +149,6 @@ export const sceneData = [
 			{id:'', object:'K70', pos:{x:9.5, y:0.5, z:0.5}, scale:{x:1, y:0.6, z:1}, rot:{x:0, y:1.57, z:0}, url:videoK7Url},
 			{id:'', object:'K80', pos:{x:5.1, y:-0.3, z:7.8}, scale:{x:2, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 		],
-		camPos:{x:-2, z:0}
+		camPos:{x:-3, z:0}
 	},
 ]

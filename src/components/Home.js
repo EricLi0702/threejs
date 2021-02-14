@@ -20,7 +20,7 @@ export default class HomeComponent extends React.Component {
 		this.raycaster = new THREE.Raycaster(); this.mouse = new THREE.Vector2();
 		this.animate = this.animate.bind(this);
 		this.modalWrapper = React.createRef(null);
-		this.state = {selScene:'K9', overTarget:null, overPoint:null, selModal:null, loading:true};
+		this.state = {selScene:'K4', overTarget:null, overPoint:null, selModal:null, loading:true};
 		this.hotspotArr = []; this.pointArr = [];
 	}
 
@@ -81,7 +81,6 @@ export default class HomeComponent extends React.Component {
 			const newMesh = this.totalGroup.children.find(mesh=> mesh.sceneName === overTarget);
 			if (!newMesh) return;
 			this.controls.enabled = false; this.transScene = true;
-			console.log(newMesh);
 			oldMesh.children[0].children.forEach(hotMesh => { hotMesh.visible = false; });
 			oldMesh.children[1].children.forEach(pointMesh => { pointMesh.visible = false; });
 			newMesh.material.opacity = 0; newMesh.visible = true;
@@ -127,8 +126,6 @@ export default class HomeComponent extends React.Component {
 		for(let i = 0; i < sceneData.length; i++) {
 			const item = sceneData[i];
 			const backMap = await this.loadImage(item.backImg);
-			backMap.wrapS = THREE.RepeatWrapping;
-			backMap.repeat.x = - 1;
 			const backGeo = new THREE.SphereGeometry(10, 128, 128);
 			const backMat = new THREE.MeshBasicMaterial({map:backMap, side:2, transparent:true, opacity:1});
 			var backMesh = new THREE.Mesh(backGeo, backMat);
@@ -169,7 +166,6 @@ export default class HomeComponent extends React.Component {
 				this.pointArr = pointGroup.children;
 			}
 		}
-		console.log("loaded");
 		this.setState({loading:false});
 	}
 
@@ -189,14 +185,14 @@ export default class HomeComponent extends React.Component {
 		// this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 		this.camera = new THREE.PerspectiveCamera(60, this.cWidth / this.cHeight, 0.01, 100);
-		this.camera.position.set(-2, 0, 0);
+		this.camera.position.set(-3, 0, 0);
 		this.scene = new THREE.Scene();
 		this.totalGroup = new THREE.Group(); this.scene.add(this.totalGroup);
 
 		this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-		// this.controls.enablePan = false;  
-		this.controls.enableZoom = false;
-		this.controls.minDistance = 0.01; this.controls.maxDistance = 100; 
+		// this.controls.enablePan = false;
+		// this.controls.enableZoom = true;
+		this.controls.minDistance = 0.1; this.controls.maxDistance = 5; 
 
 		const ambientLight = new THREE.AmbientLight( 0xFFFFFF, 0.3 ); this.scene.add( ambientLight );
 		this.mainLight = new THREE.DirectionalLight( 0xFFFFFF, 0.9 ); this.scene.add( this.mainLight );
