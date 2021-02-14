@@ -20,7 +20,7 @@ export default class HomeComponent extends React.Component {
 		this.raycaster = new THREE.Raycaster(); this.mouse = new THREE.Vector2();
 		this.animate = this.animate.bind(this);
 		this.modalWrapper = React.createRef(null);
-		this.state = {selScene:'K4', overTarget:null, overPoint:null, selModal:null, loading:true};
+		this.state = {selScene:'K9', overTarget:null, overPoint:null, selModal:null, loading:true};
 		this.hotspotArr = []; this.pointArr = [];
 	}
 
