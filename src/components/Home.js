@@ -34,9 +34,6 @@ export default class HomeComponent extends React.Component {
 		window.addEventListener( 'pointerdown', this.mouseDown, false );
 		window.addEventListener( 'pointermove', this.mouseMove, false );
 		window.addEventListener( 'pointerup', this.mouseUp, false );
-		// var link = document.createElement('link');
-		// link.rel = 'import';
-		// link.href = 'https://www.messebau-planung.at/de/portfolio-projekte-stockstaende';
 	}
 
 	openWindow=(url)=> {
@@ -165,8 +162,6 @@ export default class HomeComponent extends React.Component {
 		if (!document.getElementById("container")) return false;
 		document.getElementById("container").appendChild(this.renderer.domElement);
 		this.renderer.setClearColor(0xD8D8D8, 1);
-		// this.renderer.shadowMap.enabled = true;
-		// this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 		this.camera = new THREE.PerspectiveCamera(60, this.cWidth / this.cHeight, 0.01, 100);
 		this.camera.position.set(-2, 0, -0.8);
@@ -174,16 +169,11 @@ export default class HomeComponent extends React.Component {
 		this.totalGroup = new THREE.Group(); this.scene.add(this.totalGroup);
 
 		this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-		// this.controls.enablePan = false;
-		// this.controls.enableZoom = true;
 		this.controls.minDistance = 0.1; this.controls.maxDistance = 5; 
 
 		const ambientLight = new THREE.AmbientLight( 0xFFFFFF, 0.3 ); this.scene.add( ambientLight );
 		this.mainLight = new THREE.DirectionalLight( 0xFFFFFF, 0.9 ); this.scene.add( this.mainLight );
-		this.mainLight.position.set(50, 50, 50); this.mainLight.castShadow = true;
-		this.mainLight.shadow.radius = 15;
-		this.mainLight.shadow.mapSize.width = this.mainLight.shadow.mapSize.height = 2048;
-		this.mainLight.shadow.camera.far = 100;
+		this.mainLight.position.set(50, 50, 50);
 	}
 	mouseDown=(e)=>{
 		this.mouseStatus = "down";
