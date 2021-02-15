@@ -149,6 +149,6 @@ export const sceneData = [
 			{id:'', object:'K70', pos:{x:9.5, y:0.5, z:0.5}, scale:{x:1, y:0.6, z:1}, rot:{x:0, y:1.57, z:0}, url:videoK7Url},
 			{id:'', object:'K80', pos:{x:5.1, y:-0.3, z:7.8}, scale:{x:2, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 		],
-		camPos:{x:-3, z:0}
+		camPos:{x:-2, z:-0.8}
 	},
 ]

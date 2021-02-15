@@ -185,7 +185,7 @@ export default class HomeComponent extends React.Component {
 		// this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 		this.camera = new THREE.PerspectiveCamera(60, this.cWidth / this.cHeight, 0.01, 100);
-		this.camera.position.set(-3, 0, 0);
+		this.camera.position.set(-2, 0, -0.8);
 		this.scene = new THREE.Scene();
 		this.totalGroup = new THREE.Group(); this.scene.add(this.totalGroup);
 
