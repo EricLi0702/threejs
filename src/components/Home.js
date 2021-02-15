@@ -77,31 +77,16 @@ export default class HomeComponent extends React.Component {
 		const {overTarget, overPoint, selScene, selModal} = this.state;
 		if (selModal || this.transScene === true) return;
 		if (overTarget) {
-			const oldMesh = this.totalGroup.children.find(mesh=> mesh.sceneName === selScene);
-			const newMesh = this.totalGroup.children.find(mesh=> mesh.sceneName === overTarget);
-			if (!newMesh) return;
-			this.controls.enabled = false; this.transScene = true;
-			oldMesh.children[0].children.forEach(hotMesh => { hotMesh.visible = false; });
-			oldMesh.children[1].children.forEach(pointMesh => { pointMesh.visible = false; });
-			newMesh.material.opacity = 0; newMesh.visible = true;
-			const camPos = this.camera.position;
-			new Tween(this.camera).to({ 'position.x': camPos.x * 0.2, 'position.y': camPos.y * 0.2, 'position.z': camPos.z * 0.2, }, 250).easing(easeType).start();
-			setTimeout(() => {
-				new Tween(this.camera).to({ 'position.x': camPos.x, 'position.y': camPos.y, 'position.z': camPos.z, }, 250).easing(easeType).start();
-			}, 250);
-			new Tween(oldMesh.material).to({ 'opacity': 0 }, 500).easing(easeType).start();
-			new Tween(newMesh.material).to({ 'opacity': 1 }, 500).easing(easeType).start();
-			setTimeout(() => {
-				new Tween(this.camera).to({ 'position.x': newMesh.camPos.x, 'position.z': newMesh.camPos.z, }, 500).easing(easeType).start();
-				newMesh.children[0].children.forEach(hotMesh => { hotMesh.visible = true; });
-				newMesh.children[1].children.forEach(pointMesh => { pointMesh.visible = true; });
-				this.hotspotArr = newMesh.children[0].children;
-				this.pointArr = newMesh.children[1].children;
-				oldMesh.visible = false;
-				newMesh.visible = true;
-				this.setState({selScene: overTarget});
-				this.controls.enabled = true;  this.transScene = false;
-			}, 500);
+			this.setState({selScene: overTarget});
+			this.totalGroup.children.forEach(mesh => {
+				if (mesh.sceneName === overTarget) {
+					mesh.visible = true;
+					this.hotspotArr = mesh.children[0].children;
+					this.pointArr = mesh.children[1].children;
+					this.camera.position.set(mesh.camPos.x, 0, mesh.camPos.z);
+				}
+				else mesh.visible = false;
+			});
 		}
 		else if (overPoint) {
 			const pointMesh = this.pointArr.find(mesh=>mesh.object===overPoint);
@@ -139,7 +124,6 @@ export default class HomeComponent extends React.Component {
 				const hotGeo = new THREE.CylinderGeometry(1, 1, 0.01, 32);
 				const hotMat = new THREE.MeshBasicMaterial({color:colVal, transparent:true, opacity:0.5});
 				const hotMesh = new THREE.Mesh(hotGeo, hotMat);
-				hotMesh.visible = item.name === selScene?true:false;
 				hotMesh.target = hotspot.target;
 				hotMesh.hotId = hotspot.id;
 				hotMesh.position.set(hotspot.pos.x, hotspot.pos.y, -hotspot.pos.z);
