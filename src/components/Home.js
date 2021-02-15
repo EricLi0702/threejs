@@ -22,6 +22,7 @@ export default class HomeComponent extends React.Component {
 		this.modalWrapper = React.createRef(null);
 		this.state = {selScene:'K9', overTarget:null, overPoint:null, selModal:null, loading:true};
 		this.hotspotArr = []; this.pointArr = [];
+		this.device = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )?"mobile":"web";
 	}
 
 	componentDidMount() {
@@ -34,6 +35,10 @@ export default class HomeComponent extends React.Component {
 		window.addEventListener( 'pointerdown', this.mouseDown, false );
 		window.addEventListener( 'pointermove', this.mouseMove, false );
 		window.addEventListener( 'pointerup', this.mouseUp, false );
+		window.addEventListener("touchstart", this.mouseDown, false);
+		window.addEventListener("touchmove", this.mouseMove, false);
+		window.addEventListener("touchend", this.touchEnd, false);
+		// window.addEventListener("touchcancel", this.mouseUp, false);
 	}
 
 	openWindow=(url)=> {
@@ -54,7 +59,7 @@ export default class HomeComponent extends React.Component {
 
 	mouseMove=(e)=>{
 		if (this.state.selModal) return;
-		if (this.mouseStatus === "down") return;
+		if (this.mouseStatus === "down" || this.mouseStatus === "drag") {this.mouseStatus = "drag"; return;}
 		const intersectTarget = GetRayCastObject(this, e.clientX, e.clientY, this.hotspotArr);
 		const overTarget = intersectTarget?intersectTarget.object.target:null;
 		if (overTarget !== this.state.overTarget) {
@@ -70,8 +75,26 @@ export default class HomeComponent extends React.Component {
 		}
 	}
 
+	touchEnd=(e)=>{
+		if (this.mouseStatus === "drag") return;
+		if (this.device === "mobile") {
+			const mouseX = e.changedTouches[0].pageX;
+			const mouseY = e.changedTouches[0].pageY;
+	
+			const intersectTarget = GetRayCastObject(this, mouseX, mouseY, this.hotspotArr);
+			const overTarget = intersectTarget?intersectTarget.object.target:null;
+
+			const intersectPoint = GetRayCastObject(this, mouseX, mouseY, this.pointArr);
+			const overPoint = intersectPoint?intersectPoint.object.object:null;
+			this.setState({overTarget, overPoint}, ()=>{
+				this.mouseClick();
+			});
+		}
+		this.mouseStatus = "up";
+	}
+
 	mouseClick=(e)=>{
-		const {overTarget, overPoint, selScene, selModal} = this.state;
+		var {overTarget, overPoint, selScene, selModal} = this.state;
 		if (selModal || this.transScene === true) return;
 		if (overTarget) {
 			this.setState({selScene: overTarget});
@@ -179,7 +202,7 @@ export default class HomeComponent extends React.Component {
 		this.mouseStatus = "down";
 		if (this.modalWrapper && this.modalWrapper.current && !this.modalWrapper.current.contains(e.target)) {
 			this.setModal(null);
-        }
+		}
 	}
 	mouseUp=(e)=>{
 		this.mouseStatus = "up";
