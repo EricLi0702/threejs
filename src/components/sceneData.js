@@ -21,6 +21,7 @@ const testPdfUrl = 'http://messe.plato.exposed/test3d/source/Virtueller-Messesta
 
 const pdfK4Url = 'http://messe.plato.exposed/test3d/source/Virtueller-Messestand_MbP.pdf';
 const videoK7Url = 'http://messe.plato.exposed/test3d/source/MesseBauPlanung_GmbH.mp4';
+const srcK5kontakt = 'https://www.messebau-planung.at/de/kontakt';
 
 export const sceneData = [
 	{
@@ -41,10 +42,10 @@ export const sceneData = [
 			{id:'', object:'K6_system', pos:{x:6, y:-1.2, z:7.5}, scale:{x:1.5, y:1, z:1}, rot:{x:0, y:1.5, z:0}, src:srcK6System},
 			{id:'', object:'K6_stock', pos:{x:5.2, y:-1, z:8.2}, scale:{x:1.5, y:1, z:1}, rot:{x:0, y:1.6, z:0}, src:srcK6Stock},
 			{id:'', object:'K70', pos:{x:9.3, y:1, z:-2.2}, scale:{x:2.4, y:1.6, z:1}, rot:{x:0, y:1.57, z:0}, url:videoK7Url},
-			{id:'', object:'K80', pos:{x:0.7, y:-0.5, z:9.8}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
-			{id:'', object:'K81', pos:{x:-0.1, y:-0.5, z:9.8}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
-			{id:'', object:'K82', pos:{x:-0.9, y:-0.5, z:9.8}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
-			{id:'', object:'K83', pos:{x:-1.6, y:-0.5, z:9.8}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+			{id:'', object:'K51', pos:{x:4.0, y:0.2, z:9.8}, scale:{x:2.7, y:1.5, z:1}, rot:{x:0, y:0, z:0}, src:srcK5kontakt},
+//			{id:'', object:'K81', pos:{x:-0.1, y:-0.5, z:9.8}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+//			{id:'', object:'K82', pos:{x:-0.9, y:-0.5, z:9.8}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+			{id:'', object:'K83', pos:{x:-0.4, y:0.1, z:9.8}, scale:{x:3.1, y:1.5, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 		],
 		camPos:{x:0, z:3}
 	}, {
@@ -56,9 +57,11 @@ export const sceneData = [
 			{id:'', target:'K8', pos:{x:-7.5, y:-3.5, z: 3.5}, scl:0.9},
 		],
 		points: [
-			{id:'', object:'K50', pos:{x:8.5, y:0.9, z:-2.3}, scale:{x:4, y:3, z:1}, rot:{x:0, y:1.57, z:0}, url:videoK7Url},
+//			{id:'', object:'K50', pos:{x:8.5, y:0.9, z:9.3}, scale:{x:30, y:6, z:1}, rot:{x:0, y:1.57, z:0}, url:videoK7Url},
+			{id:'', object:'K50', pos:{x:8.5, y:0.9, z:-1.0}, scale:{x:8, y:5, z:1}, rot:{x:0, y:1.57, z:0}, src:srcK5kontakt},
+			{id:'', object:'K51', pos:{x:8.5, y:0.9, z:6.8}, scale:{x:16, y:8, z:1}, rot:{x:0, y:0, z:0}, src:srcK5kontakt},
 		],
-		camPos:{x:-3, z:0}
+		camPos:{x:-3, z:-2}
 	}, {
 		name: 'K6',
 		backImg: ImgK6,
@@ -77,10 +80,11 @@ export const sceneData = [
 			{id:'', object:'K6_system', pos:{x:8.5, y:-2.3, z:-2.5}, scale:{x:3, y:2, z:1}, rot:{x:0, y:1.5, z:0}, src:srcK6System},
 			{id:'', object:'K6_stock', pos:{x:8.7, y:-2.4, z:2}, scale:{x:3, y:2, z:1}, rot:{x:0, y:1.6, z:0}, src:srcK6Stock},
 			{id:'', object:'K70', pos:{x:6.2, y:0.8, z:-7}, scale:{x:1.8, y:1.2, z:1}, rot:{x:0, y:1.57, z:0}, url:videoK7Url},
-			{id:'', object:'K80', pos:{x:-0.4, y:-0.9, z:9.8}, scale:{x:1, y:0.7, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
-			{id:'', object:'K81', pos:{x:-1.7, y:-0.9, z:9.6}, scale:{x:0.9, y:0.6, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
-			{id:'', object:'K82', pos:{x:-3, y:-0.9, z:9.3}, scale:{x:1, y:0.7, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
-			{id:'', object:'K83', pos:{x:-4.1, y:-0.9, z:8.8}, scale:{x:1, y:0.7, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+			{id:'', object:'K50', pos:{x:8.7, y:1.0, z:6.6}, scale:{x:4.1, y:3, z:1}, rot:{x:0, y:1.6, z:0}, src:srcK5kontakt},
+			{id:'', object:'K51', pos:{x:7.0, y:1.0, z:9.8}, scale:{x:6, y:3, z:1}, rot:{x:0, y:0, z:0}, src:srcK5kontakt},
+			// {id:'', object:'K81', pos:{x:-1.7, y:-0.9, z:9.6}, scale:{x:0.9, y:0.6, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+			// {id:'', object:'K82', pos:{x:-3, y:-0.9, z:9.3}, scale:{x:1, y:0.7, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+			{id:'', object:'K83', pos:{x:-2.3, y:0.2, z:8.8}, scale:{x:5, y:2.5, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 		],
 		camPos:{x:-3, z:0}
 	}, {
@@ -97,10 +101,10 @@ export const sceneData = [
 			{id:'', object:'K40', shape:'circle', pos:{x:-8.5, y:-1.8, z:0.5}, scale:{x:0.5, y:1, z:0.5}, rot:{x:0, y:0, z:0}, url:pdfK4Url},
 			{id:'', object:'K41', shape:'circle', pos:{x:-8.7, y:-2.4, z:-1.3}, scale:{x:0.5, y:1, z:0.5}, rot:{x:0, y:0, z:0}, url:pdfK4Url},
 			{id:'', object:'K70', pos:{x:8.7, y:2.1, z:1.1}, scale:{x:5.1, y:2.7, z:1}, rot:{x:0, y:1.57, z:0}, url:videoK7Url},
-			{id:'', object:'K80', pos:{x:-2.1, y:-0.4, z:9.7}, scale:{x:0.5, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
-			{id:'', object:'K81', pos:{x:-2.5, y:-0.4, z:9.2}, scale:{x:0.5, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
-			{id:'', object:'K82', pos:{x:-3.1, y:-0.4, z:9.2}, scale:{x:0.5, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
-			{id:'', object:'K83', pos:{x:-3.8, y:-0.4, z:9.2}, scale:{x:0.5, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+			{id:'', object:'K80', pos:{x:-3.0, y:0.2, z:9.7}, scale:{x:2.7, y:1.6, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+			// {id:'', object:'K81', pos:{x:-2.5, y:-0.4, z:9.2}, scale:{x:0.5, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+			// {id:'', object:'K82', pos:{x:-3.1, y:-0.4, z:9.2}, scale:{x:0.5, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+			// {id:'', object:'K83', pos:{x:-3.8, y:-0.4, z:9.2}, scale:{x:0.5, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 		],
 		camPos:{x:-3, z:0}
 	}, {
@@ -116,16 +120,16 @@ export const sceneData = [
 		points: [
 			{id:'', object:'K40', shape:'circle', pos:{x:-9, y:-0.9, z:0.6}, scale:{x:0.3, y:1, z:0.3}, rot:{x:0, y:0, z:0}, url:pdfK4Url},
 			{id:'', object:'K41', shape:'circle', pos:{x:-9, y:-0.9, z:-0.1}, scale:{x:0.3, y:1, z:0.3}, rot:{x:0, y:0, z:0}, url:pdfK4Url},
-			{id:'', object:'K50', pos:{x:1.8, y:0.6, z:-9.4}, scale:{x:2.4, y:1.8, z:1}, rot:{x:0, y:0, z:0}, url:videoK7Url},
+			{id:'', object:'K50', pos:{x:1.8, y:0.6, z:-7.4}, scale:{x:5, y:2, z:1}, rot:{x:0, y:0, z:0}, src:srcK5kontakt},
 			{id:'', object:'K6_indiv', pos:{x:-6.1, y:0.5, z:-7.2}, scale:{x:1.8, y:1.2, z:1}, rot:{x:0, y:0, z:0}, src:srcK6Indiv},
 			{id:'', object:'K6_misch', pos:{x:-4.1, y:0.7, z:-8.5}, scale:{x:1.8, y:1.2, z:1}, rot:{x:0, y:0, z:0}, src:srcK6Misch},
 			{id:'', object:'K6_system', pos:{x:-6.1, y:-1.4, z:-7.2}, scale:{x:1.8, y:1.2, z:1}, rot:{x:0, y:0, z:0}, src:srcK6System},
 			{id:'', object:'K6_stock', pos:{x:-4.1, y:-1.6, z:-8.4}, scale:{x:2, y:1.5, z:1}, rot:{x:0, y:0, z:0}, src:srcK6Stock},
 			{id:'', object:'K70', pos:{x:-7.4, y:0.6, z:-5.7}, scale:{x:1.6, y:1, z:1}, rot:{x:0, y:0, z:0}, url:videoK7Url},
-			{id:'', object:'K80', pos:{x:9.4, y:-1.3, z:-2}, scale:{x:1.4, y:0.8, z:1}, rot:{x:0, y:1.57, z:0}, url:testPdfUrl},
-			{id:'', object:'K81', pos:{x:9.8, y:-1.4, z:0.1}, scale:{x:1.4, y:0.8, z:1}, rot:{x:0, y:1.57, z:0}, url:testPdfUrl},
-			{id:'', object:'K82', pos:{x:9.4, y:-1.3, z:2.2}, scale:{x:1.4, y:0.8, z:1}, rot:{x:0, y:1.57, z:0}, url:testPdfUrl},
-			{id:'', object:'K83', pos:{x:8.8, y:-1.2, z:4}, scale:{x:1.2, y:0.8, z:1}, rot:{x:0, y:1.4, z:0}, url:testPdfUrl},
+			{id:'', object:'K51', pos:{x:6.4, y:0.6, z:-9.3}, scale:{x:5.8, y:3, z:1}, rot:{x:0, y:1.6, z:0}, src:srcK5kontakt},
+			// {id:'', object:'K81', pos:{x:9.8, y:-1.4, z:0.1}, scale:{x:1.4, y:0.8, z:1}, rot:{x:0, y:1.57, z:0}, url:testPdfUrl},
+			// {id:'', object:'K82', pos:{x:9.4, y:-1.3, z:2.2}, scale:{x:1.4, y:0.8, z:1}, rot:{x:0, y:1.57, z:0}, url:testPdfUrl},
+			{id:'', object:'K83', pos:{x:8.8, y:0.2, z:0.8}, scale:{x:8, y:4, z:1}, rot:{x:0, y:1.57, z:0}, url:testPdfUrl},
 		],
 		camPos:{x:-3, z:0}
 	}, {
@@ -141,13 +145,14 @@ export const sceneData = [
 		points: [
 			{id:'', object:'K40', shape:'circle', pos:{x:9, y:-1, z:0.6}, scale:{x:0.3, y:1, z:0.3}, rot:{x:0, y:0, z:0}, url:pdfK4Url},
 			{id:'', object:'K41', shape:'circle', pos:{x:9, y:-0.9, z:-0.1}, scale:{x:0.3, y:1, z:0.3}, rot:{x:0, y:0, z:0}, url:pdfK4Url},
-			{id:'', object:'K50', pos:{x:8, y:0.2, z:5.6}, scale:{x:0.5, y:0.7, z:1}, rot:{x:0, y:1.57, z:0}, url:videoK7Url},
+			{id:'', object:'K50', pos:{x:8, y:0.2, z:6.0}, scale:{x:1.2, y:0.7, z:1}, rot:{x:0, y:1.57, z:0}, src:srcK5kontakt},
+			{id:'', object:'K51', pos:{x:8, y:0.2, z:7.2}, scale:{x:2, y:1, z:1}, rot:{x:0, y:0, z:0}, src:srcK5kontakt},
 			{id:'', object:'K6_indiv', pos:{x:8.9, y:0.2, z:4.6}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:1.57, z:0}, src:srcK6Indiv},
 			{id:'', object:'K6_misch', pos:{x:8.5, y:0.2, z:5.3}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:1.57, z:0}, src:srcK6Misch},
 			{id:'', object:'K6_system', pos:{x:8.9, y:-0.4, z:4.6}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:1.57, z:0}, src:srcK6System},
 			{id:'', object:'K6_stock', pos:{x:8.5, y:-0.4, z:5.3}, scale:{x:0.6, y:0.4, z:1}, rot:{x:0, y:1.57, z:0}, src:srcK6Stock},
 			{id:'', object:'K70', pos:{x:9.5, y:0.5, z:0.5}, scale:{x:1, y:0.6, z:1}, rot:{x:0, y:1.57, z:0}, url:videoK7Url},
-			{id:'', object:'K80', pos:{x:5.1, y:-0.3, z:7.8}, scale:{x:2, y:0.3, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
+			{id:'', object:'K80', pos:{x:5.1, y:-0.0, z:7.8}, scale:{x:2, y:1.2, z:1}, rot:{x:0, y:0, z:0}, url:testPdfUrl},
 		],
 		camPos:{x:-2, z:-0.8}
 	},
