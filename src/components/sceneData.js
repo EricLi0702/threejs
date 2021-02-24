@@ -17,10 +17,10 @@ const srcK6System = 'https://www.messebau-planung.at/de/portfolio-projekte-syste
 const srcK6Stock = 'https://www.messebau-planung.at/de/portfolio-projekte-stockstaende';
 
 const testVideoUrl = 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
-const testPdfUrl = 'http://messe.plato.exposed/test3d/source/Virtueller-Messestand_MbP_Full-Service_11-02-2021.pdf';
+const testPdfUrl = 'https://messe.plato.exposed/01/source/Virtueller-Messestand_MbP_Full-Service_11-02-2021.pdf';
 
-const pdfK4Url = 'http://messe.plato.exposed/test3d/source/Virtueller-Messestand_MbP.pdf';
-const videoK7Url = 'http://messe.plato.exposed/test3d/source/MesseBauPlanung_GmbH.mp4';
+const pdfK4Url = 'https://messe.plato.exposed/01/source/Virtueller-Messestand_MbP.pdf';
+const videoK7Url = 'https://messe.plato.exposed/01/source/MesseBauPlanung_GmbH.mp4';
 const srcK5kontakt = 'https://www.messebau-planung.at/de/kontakt';
 
 export const sceneData = [

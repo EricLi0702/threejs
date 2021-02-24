@@ -238,7 +238,7 @@ export default class HomeComponent extends React.Component {
 				{selModal !== null &&
 					<div className='modal-wrapper'>
 						<div id="detailModal" ref={this.modalWrapper}>
-							{selModal.url && <iframe src={selModal.url}></iframe>}
+							{selModal.url && <iframe src={selModal.url} allow="autoplay; fullscreen; picture-in-picture; xr-spatial-tracking; encrypted-media"></iframe>}
 							{selModal.src && <img src={selModal.src}></img>}
 						</div> 
 					</div>
