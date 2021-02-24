@@ -246,6 +246,7 @@ export default class HomeComponent extends React.Component {
 				{loading === true &&
 					<div id='loading'>
 						<div className='item left top'></div>
+						<div className='item left top'></div>
 						<div className='item right top'></div>
 						<div className='item left bottom'></div>
 						<div className='item right bottom'></div>
